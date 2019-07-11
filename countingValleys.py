@@ -7,11 +7,13 @@ A valley is a sequence of consecutive steps below sea level, starting with a ste
 Given Gary's sequence of up and down steps during his last hike, find and print the number of valleys he walked through. 
 For example, if Gary's path is 
 , he first enters a valley a units deep. Then he climbs out an up onto a mountain a units high. Finally, he returns to sea level and ends his hike. 
+
 Function Description 
 Complete the countingValleys function in the editor below. It must return an integer that denotes the number of valleys Gary traversed. 
 countingValleys has the following parameter(s): 
 n: the number of steps Gary takes 
 s: a string describing his path 
+
 Input Format
 The first line contains an integer, the number of steps in Gary's hike. 
 The second line contains a single string, of characters that describe his path.
