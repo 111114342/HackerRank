@@ -1,14 +1,19 @@
 '''
 https://www.hackerrank.com/challenges/new-year-chaos/problem
+
+Sample Input
+2
+5
+2 1 5 3 4
+5
+2 5 1 3 4
+
+Sample Output
+3
+Too chaotic
 '''
 
 #!/bin/python3
-
-import math
-import os
-import random
-import re
-import sys
 
 
 # Complete the minimumBribes function below.
