@@ -32,7 +32,7 @@ def solve(a, b, c):
                     gcd = i
                     break
                 
-        if c%gcd ==0 :
+        if c%gcd == 0 :
             result = "YES"
         else:
             result = "NO"
