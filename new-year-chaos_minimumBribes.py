@@ -18,20 +18,19 @@ Too chaotic
 
 # Complete the minimumBribes function below.
 def minimumBribes(q):
-
-
     moves_no = 0
 
     for i in range(len(q)):
         move = q[i] - i - 1
+        
+        # if any move is more than 2 steps, then print out "Too chaotic"
         if move > 2:
             print("Too chaotic")
             return
     
+    # run 2 loops to sort all numbers, with early stopping when all numbers are sorted
     for c1 in range(len(q)):    
-
         for c2 in range(len(q)):
-
             c3 = len(q) - c2 - 1
             move = q[c3] - c3 - 1
                 
@@ -40,6 +39,7 @@ def minimumBribes(q):
                     moves_no += 1
                     q[c3],q[c3-1] = q[c3-1]*1,q[c3]*1
                     
+        # check if all numbers are in order then stop the sort and print result
         move_check = 0        
         for i in range(len(q)):
             move = q[i] - i - 1
@@ -48,6 +48,7 @@ def minimumBribes(q):
         if move_check == 0:
             print(moves_no)
             return
+        
     print(moves_no)
             
 
