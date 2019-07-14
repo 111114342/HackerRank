@@ -10,20 +10,28 @@ For each test case, print "YES" (in a new line) if one of the jugs can be filled
 '''
 
 def solve(a, b, c):
- 
-    if c > max(b,a):
+    # if c is more than both jugs then cannot fill c in any jug
+    if c > max(a,b):
         result = "NO"
+  
+    # if any jug is 1 gallon, then can fill any amount 
     elif min(a,b) == 1:
         result = "YES"
+    # if c is divisible by the different between the two jugs, then "YES" 
     elif c%(max(a,b)-min(a,b))==0:
         result = "YES"
+      
+    # if c is divisible by any jug or equal to any jug, then "YES"  
     elif c%(min(a,b))==0:
         result = "YES"
     elif c == a or c == b:
         result = "YES"
+    
+    # else, check if c is divisible by greatest common divisor (gdc), then "YES"
     else:
+        # find gcd
         gcd = 1
-        if max(a,b)%min(a,b)==0:
+        if max(a,b) % min(a,b) == 0:
             gcd = min(a,b)
         else:
             for count in range(2,int(min(a,b)/2+1)):
@@ -31,31 +39,11 @@ def solve(a, b, c):
                 if a%i == 0 and b%i == 0:
                     gcd = i
                     break
-                
-        if c%gcd == 0 :
+        
+        # check if c is divsiible by gcd
+        if c % gcd == 0 :
             result = "YES"
         else:
             result = "NO"
         
     return result
-   
-   
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
-    t = int(input())
-
-    for t_itr in range(t):
-        abc = input().split()
-
-        a = int(abc[0])
-
-        b = int(abc[1])
-
-        c = int(abc[2])
-
-        result = solve(a, b, c)
-
-        fptr.write(result + '\n')
-
-    fptr.close()
