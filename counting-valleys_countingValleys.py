@@ -29,12 +29,18 @@ Sample Output
 
 def countingValleys(n, s):
     valleys_no = 0
-    h = 0
+    h = 0 # initial height
+    
     for i in range(len(s)):
+        # height reduces by 1 if going down
         if s[i] == "D":
             h -= 1
+        # height increases by 1 if going up    
         elif s[i] == "U":
             h += 1
+            
+            # if reaching 0 height after going up, then finish 1 valley
             if h == 0:
                 valleys_no +=1
+                
     return valleys_no
